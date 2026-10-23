@@ -11,7 +11,9 @@ Run this from the prepared repository root. It does not modify the source traini
 
 ```bash
 python3 scripts/collect_training_artifacts.py \
-  --source "/goinfre/$USER/colony-training"
+  --source "/goinfre/$USER/colony-training" \
+  --include-snapshots \
+  --include-shared-models
 ```
 
 | Source | Repository destination | Purpose |
@@ -31,16 +33,19 @@ The filename `best.onnx`, a numbered snapshot, or the highest iteration number
 does not by itself identify the winning submission. Select the exact file that
 was uploaded at the end of the contest.
 
-For example, **only if** your final upload was `best_7.onnx`:
+The confirmed final tournament upload was **`best_8.onnx`**:
 
 ```bash
 python3 scripts/collect_training_artifacts.py \
   --source "/goinfre/$USER/colony-training" \
-  --winner "/goinfre/$USER/colony-training/selfplay/best_7.onnx" \
-  --include-weights
+  --winner "/goinfre/$USER/colony-training/selfplay/best_8.onnx" \
+  --include-weights \
+  --include-snapshots \
+  --include-shared-models
 ```
 
-`best_7.onnx` is an example. Replace it with your actual final submission.
+`best_8.onnx` is the final submission selected by the team. Training subsequently
+continued to 55,000 games and the `best_10.onnx` snapshot.
 The collector copies it to `models/submission.onnx`, compares its hash with the
 saved candidates, and adds `models/submission.pt` only if a matching candidate
 ONNX has an accompanying `candidate.pt`. It does not pair an old submitted model
@@ -52,14 +57,14 @@ Validate the selected model separately:
 python tools/validate_submission.py models/submission.onnx
 ```
 
-## Keep these in a local backup, outside GitHub
+## Retain source backups and publish only the curated selection
 
 | Files | Decision |
 |---|---|
 | Every `iteration-*/candidate.pt` and `candidate.onnx` | Keep the full experiment archive outside Git. Publish the selected models and their hash index. |
 | `selfplay/iteration-00110/replay.npz` and other `.npz` files | Keep in the original run directory if you want to resume training. Omit from Git. |
-| `selfplay/best_0.onnx` through `best_10.onnx` | Select the final submission rather than automatically publishing every snapshot. All available snapshots are indexed by hash. |
-| `selfplay/other_models/zak/*`, `selfplay/other_models/tobias/*` | Other people's model binaries; omitted from this repository package. |
+| Numbered `selfplay/best_*.onnx` snapshots | Publish available snapshots under `models/evolution/` with `--include-snapshots`; retain the source copies. |
+| `selfplay/other_models/tobias/*` and other peer contributions | With `--include-shared-models`, Tobias is credited as a teammate under `models/team/tobias/`; peer files go under `models/community/<contributor>/`. Preserve contributor permission and license terms. |
 | `.venv`, installed Python packages, `__pycache__`, bytecode | Recreated during setup; omit from Git. |
 | `smoke/dataset.npz`, `level4-v1/dataset.npz` | Not required in the main source repository, even though these particular datasets are small. |
 | Original ZIP archives and superseded script copies | Preserve in the original backup; omit duplicates from the clean repository. |
@@ -71,13 +76,12 @@ relying on its `/goinfre` copy alone.
 ## Before pushing
 
 1. Confirm that `models/submission.onnx` is the exact final uploaded model.
-2. If available, add a result screenshot with the Germany filter selected as
-   `docs/images/germany-ranking.png`. The existing Hall of Fame screenshot shows
-   the overall 24th-place result; the README identifies the national result as
-   separately reported by the team.
+2. Check that `docs/images/germany-ranking.png` and the all-countries Hall of Fame
+   image both render in the README. Both result screenshots are included.
 3. Run `python -m unittest discover -s tests -v` and `python scripts/replay_matches.py`.
 4. Use `git status --short` to check that the virtual environment, uncurated
-   training directory and other teams' model files have not been added. Avoid
+   training directory have not been added. Shared models should appear only in
+   the explicitly curated team/community folders. Avoid
    overriding the ignore rules with `git add -f`.
 5. Retain the root `LICENSE`: the supplied engine is not presented as a team-authored MIT project.
 

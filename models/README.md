@@ -15,6 +15,20 @@ Run `scripts/collect_training_artifacts.py` to populate:
 | `manifest.json` | SHA-256, size, role and source-relative path for each imported file |
 
 Numbered `best_*.onnx` snapshots and all iteration candidates are indexed by hash,
-not all copied. Another team's ONNX files are not collected. The collector does
-not certify model format: run the official validator on a selected model before
-describing it as a validated submission.
+not all copied by default. Use `--include-snapshots` to archive every available
+numbered snapshot in `models/evolution/` and write `results/training/model-evolution.csv`.
+This preserves the model versions without copying every iteration's weights and
+replay buffer. Snapshot numbers are version labels, not exact training-game counts.
+
+Use `--include-shared-models` to copy contributor-supplied models with attribution:
+
+| Folder | Attribution |
+|---|---|
+| `team/tobias/` | Tobias, a teammate of Eray in 42Heilbronn_GTA6 |
+| `community/zak/` | Models shared by the peer identified as `zak` in the source folder |
+| `community/<other contributor>/` | Other explicitly imported peer contributions |
+
+Shared models retain contributor attribution and are not labeled as outputs of our
+self-play trainer. Keep the contributors' publication permission and supplied
+licensing terms with the files. The collector does not certify model format:
+run the official validator before describing a model as a validated submission.

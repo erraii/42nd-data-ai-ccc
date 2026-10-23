@@ -87,9 +87,9 @@ class ArtifactCollector(unittest.TestCase):
         path.write_bytes(content)
         return path
 
-    def do_collect(self, winner=None, include_weights=False):
+    def do_collect(self, winner=None, include_weights=False, **options):
         with contextlib.redirect_stdout(io.StringIO()):
-            return collect(self.source, self.repo, winner, include_weights)
+            return collect(self.source, self.repo, winner, include_weights, **options)
 
     def test_default_selection_does_not_invent_winner_or_change_source(self):
         before = {p.relative_to(self.source): digest(p) for p in self.source.rglob("*") if p.is_file()}
@@ -125,6 +125,30 @@ class ArtifactCollector(unittest.TestCase):
             self.do_collect(self.source / "missing.onnx", False)
         with self.assertRaises(ValueError):
             self.do_collect(None, True)
+
+    def test_evolution_preserves_numbered_snapshots_and_hash_mapping(self):
+        self.write("selfplay/best_10.onnx", b"later model")
+        self.write("selfplay/best_2.onnx", b"earlier model")
+        self.do_collect(self.source / "selfplay/best_7.onnx", include_snapshots=True)
+        import csv
+        with (self.repo / "results/training/model-evolution.csv").open() as stream:
+            rows = list(csv.DictReader(stream))
+        self.assertEqual([r["snapshot"] for r in rows], ["best_2.onnx", "best_7.onnx", "best_10.onnx"])
+        self.assertEqual(rows[1]["same_hash_as_submission"], "True")
+        self.assertEqual(rows[1]["matching_candidates"], "selfplay/iteration-00005/candidate.onnx")
+        self.assertTrue((self.repo / "models/evolution/best_10.onnx").exists())
+
+    def test_shared_models_credit_teammate_and_peers_separately(self):
+        self.write("selfplay/other_models/tobias/model_tobias.onnx", b"teammate model")
+        self.write("selfplay/other_models/zak/apex_predator.onnx", b"peer model")
+        self.do_collect(include_shared_models=True)
+        self.assertTrue((self.repo / "models/team/tobias/model_tobias.onnx").exists())
+        self.assertTrue((self.repo / "models/community/zak/apex_predator.onnx").exists())
+        self.assertTrue((self.repo / "models/community/unattributed/rival.onnx").exists())
+        entries = json.loads((self.repo / "models/manifest.json").read_text())["files"]
+        teammate = next(r for r in entries if r["path"] == "models/team/tobias/model_tobias.onnx")
+        self.assertEqual(teammate["contributor"], "tobias")
+        self.assertIn("Teammate", teammate["role"])
 
 
 if __name__ == "__main__":

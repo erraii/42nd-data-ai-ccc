@@ -44,8 +44,9 @@ owner's originals or training backups.
 
 - `docs/images/hall-of-fame.png`: team `42Heilbronn_GTA6`, All countries filter,
   overall rank 24, score 2112.
-- Germany rank 1 was reported by the team. The supplied screenshot does not show
-  a Germany-only ranking, so it is not used as direct evidence of national rank.
+- `docs/images/germany-ranking.png`, added subsequently, shows the Germany
+  filter selected and the team leading the listed German entries. Its rank
+  column retains overall rank numbers, including the team's overall rank 24.
 - `docs/images/tournament-dashboard.png`: an earlier in-contest view; its selected
   Since last upload filter makes the displayed counts unsuitable as lifetime totals.
 - The two game exports have no duplicate match IDs. All 53 available protocols
@@ -56,7 +57,7 @@ owner's originals or training backups.
 ## Reproducibility limits
 
 The prepared archive is sufficient to inspect the code, replay the exported games,
-and start new training after installing dependencies. The exact winning ONNX file,
-its corresponding weights, final self-play state and history still need to be
-selected from the owner's external training directory. We do not label the latest
-local champion as the winning submission without that selection.
+and start new training after installing dependencies. The team confirmed `best_8.onnx` as the final tournament submission. Training
+continued to 55,000 games and the `best_10.onnx` snapshot. Actual model, weight and
+log bytes are still imported from the owner's external training directory using
+the collector; the latest local champion remains distinct from the final upload.

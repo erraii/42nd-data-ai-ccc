@@ -1,8 +1,7 @@
 {
-  "repository_files": 57,
-  "total_uncompressed_bytes": 3705822,
+  "repository_files": 61,
   "unit_tests": {
-    "passed": 10,
+    "passed": 12,
     "failed": 0
   },
   "replays": {
@@ -19,5 +18,7 @@
   "training_logs_included": false,
   "note": "Neural training and ONNX inference were not rerun as part of repository curation; external model/log bytes were not provided.",
   "documentation_language": "English",
-  "english_documentation_and_links": "verified after translation"
+  "english_documentation_and_links": "verified after translation",
+  "germany_ranking_image": "included; Germany filter visibly selected",
+  "model_evolution_and_shared_model_import": "tested using local fixtures; actual model bytes are collected on the owner machine"
 }

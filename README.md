@@ -8,15 +8,22 @@ saved tournament replays, and the export fixes developed during the contest on
 
 | Result | Value | Evidence |
 |---|---|---|
-| Germany | **1st** | National result reported by the team |
+| Germany | **1st** | Germany-filtered Hall of Fame screenshot below |
 | Overall placement | **24th** | Hall of Fame screenshot below |
 | Final displayed score | **2112** | Hall of Fame screenshot below |
 | Team | **42Heilbronn_GTA6** | Hall of Fame; earlier in-game screens showed `UNNAMED TEAM` |
 
-![Hall of Fame showing 42Heilbronn_GTA6 in 24th place with a score of 2112](docs/images/hall-of-fame.png)
+![Germany-filtered Hall of Fame with 42Heilbronn_GTA6 leading the listed German entries](docs/images/germany-ranking.png)
 
-The screenshot uses the **All countries** filter. It documents the overall result;
-the national result above is a separate team-reported result.
+The Germany filter is selected above; the displayed rank numbers retain their
+overall values. Our team appears ahead of the other listed German entries.
+
+<details>
+<summary>Overall ranking: 24th, score 2112</summary>
+
+![All-countries Hall of Fame showing 42Heilbronn_GTA6 in 24th place with a score of 2112](docs/images/hall-of-fame.png)
+
+</details>
 
 ## What we built
 
@@ -224,7 +231,9 @@ or training logs. Import the selected real artifacts before publishing:
 python3 scripts/collect_training_artifacts.py \
   --source "/goinfre/$USER/colony-training" \
   --winner "/goinfre/$USER/colony-training/selfplay/best_8.onnx" \
-  --include-weights
+  --include-weights \
+  --include-snapshots \
+  --include-shared-models
 ```
 
 See [docs/TRAINING_ARTIFACTS.md](docs/TRAINING_ARTIFACTS.md) for the full selection
@@ -232,9 +241,25 @@ policy. `models/latest-selfplay.onnx` records the latest local champion separate
 from the submitted model. Corresponding checkpoint weights are included only when
 the saved candidate ONNX has a matching SHA-256 hash.
 
+### Model evolution and team contributions
+
+Numbered snapshots are archived in `models/evolution/`, preserving their original
+`best_N.onnx` filenames. `results/training/model-evolution.csv` records their hashes,
+matching iteration candidates, and whether they match the submitted model.
+The snapshot numbers are saved version labels; they are not assumed to correspond
+to exact training-game counts. `best_8.onnx` was the final upload; training later
+reached 55,000 games and the `best_10.onnx` snapshot.
+
+**Tobias was a teammate.** His contributed models are kept in
+`models/team/tobias/`. Models shared by other peers are kept under
+`models/community/<contributor>/`. Their manifests retain contributor attribution;
+these files are not presented as products of our self-play run. Keep contributor
+permission and any supplied model-license terms with shared binaries when publishing.
+
 ## Attribution and license
 
-Team: **42Heilbronn_GTA6**, 42 Heilbronn. This was an AI-assisted contest workflow
+Team: **42Heilbronn_GTA6**, 42 Heilbronn, including **Eray Çakıray and Tobias**.
+This was an AI-assisted contest workflow
 using ChatGPT/Codex for implementation and debugging.
 
 The supplied environment is copyright **Paul Puntschart (2026)**. Its custom

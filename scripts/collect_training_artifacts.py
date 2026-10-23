@@ -11,6 +11,7 @@ import csv
 import hashlib
 import json
 from pathlib import Path
+import re
 import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,7 +51,8 @@ def copy_artifact(source, relative, role, origin, manifest, repo):
     return entry
 
 
-def collect(source, repo, winner=None, include_weights=False):
+def collect(source, repo, winner=None, include_weights=False,
+            include_snapshots=False, include_shared_models=False):
     source, repo = Path(source).resolve(), Path(repo).resolve()
     if not source.is_dir():
         raise ValueError(f"Training root does not exist: {source}")
@@ -134,10 +136,42 @@ def collect(source, repo, winner=None, include_weights=False):
                 weights_entry = copy_artifact(weights, "models/submission.pt", "Weights paired with a byte-identical candidate ONNX",
                                               weights.relative_to(source).as_posix(), manifest, repo)
                 weights_entry["paired_onnx_sha256"] = entry["sha256"]
+    if include_snapshots:
+        numbered = [p for p in snapshots if re.fullmatch(r"best_\d+\.onnx", p.name)]
+        numbered.sort(key=lambda p: int(p.stem.split("_")[-1]))
+        submitted = manifest.get("models/submission.onnx", {}).get("sha256")
+        evolution = []
+        for path in numbered:
+            origin = path.relative_to(source).as_posix()
+            entry = copy_artifact(path, f"models/evolution/{path.name}", "Numbered self-play snapshot",
+                                  origin, manifest, repo)
+            matching = [r["source"] for r in index if r["sha256"] == entry["sha256"]
+                        and "/iteration-" in r["source"]]
+            entry["same_hash_as"] = matching
+            evolution.append({"snapshot": path.name, "sha256": entry["sha256"],
+                              "bytes": entry["bytes"], "matching_candidates": ";".join(matching),
+                              "same_hash_as_submission": bool(submitted and submitted == entry["sha256"])})
+        with (results_dir / "model-evolution.csv").open("w", newline="", encoding="utf-8") as stream:
+            writer = csv.DictWriter(stream, fieldnames=["snapshot", "sha256", "bytes", "matching_candidates", "same_hash_as_submission"])
+            writer.writeheader()
+            writer.writerows(evolution)
+    if include_shared_models:
+        shared_root = source / "selfplay/other_models"
+        for path in sorted(shared_root.rglob("*.onnx")):
+            relative = path.relative_to(shared_root)
+            owner = relative.parts[0] if len(relative.parts) > 1 else "unattributed"
+            public_relative = relative if len(relative.parts) > 1 else Path(owner) / relative
+            category = "team" if owner.lower() == "tobias" else "community"
+            role = "Teammate model contributed by Tobias" if category == "team" else f"Peer-shared model, source attribution: {owner}"
+            entry = copy_artifact(path, f"models/{category}/{public_relative.as_posix()}", role,
+                                  path.relative_to(source).as_posix(), manifest, repo)
+            entry["contributor"] = owner
+            entry["training_provenance"] = "Contributor-supplied; not claimed as output of this repository's self-play run"
     summary = {"models_copied": sorted(manifest), "indexed_checkpoints_and_snapshots": len(index),
                "winning_model_explicitly_selected": "models/submission.onnx" in manifest,
                "excluded": ["all .npz replay/dataset files", "all unselected candidate.pt / candidate.onnx files",
-                            "selfplay/other_models (third-party model files)", "virtual environments"],
+                            *([] if include_shared_models else ["selfplay/other_models (not selected for this import)"]),
+                            "virtual environments"],
                "state_note": "state-summary.json is redacted documentation, not a resumable checkpoint."}
     manifest_path.write_text(json.dumps({"files": sorted(manifest.values(), key=lambda r: r["path"])}, indent=2) + "\n")
     (results_dir / "artifact-import-summary.json").write_text(json.dumps(summary, indent=2) + "\n")
@@ -149,9 +183,12 @@ def main():
     parser.add_argument("--source", type=Path, required=True, help="Training root containing selfplay/, smoke/, level4-v1/")
     parser.add_argument("--winner", type=Path, help="The exact ONNX file actually submitted at the end of the contest")
     parser.add_argument("--include-weights", action="store_true", help="Include candidate.pt only when its paired ONNX hash matches --winner")
+    parser.add_argument("--include-snapshots", action="store_true", help="Archive all numbered best_N.onnx snapshots and create an evolution CSV")
+    parser.add_argument("--include-shared-models", action="store_true", help="Import shared ONNX files with contributor attribution; Tobias is recorded as a teammate")
     args = parser.parse_args()
     try:
-        summary = collect(args.source, ROOT, args.winner, args.include_weights)
+        summary = collect(args.source, ROOT, args.winner, args.include_weights,
+                          args.include_snapshots, args.include_shared_models)
     except (ValueError, OSError, json.JSONDecodeError) as exc:
         parser.error(str(exc))
     print(json.dumps(summary, indent=2))

@@ -18,9 +18,14 @@ training and curation scripts live separately in `scripts/`. Their original
 contest copies were found inside the engine directory and have been relocated.
 
 The event screenshots and game exports were supplied by the repository owner.
-The user-reported Germany placement is recorded separately from the screenshot's
-overall placement. Other teams' model binaries listed in the local training folder
-are **not** included in this repository.
+The Germany-filtered and all-countries screenshots document the national and
+overall result views. Tobias was a teammate; his supplied models are classified
+as team contributions under `models/team/tobias/`. Other peer-shared models are
+classified under `models/community/<contributor>/` when explicitly imported.
+Contributor identity and source filenames are retained in the model manifest.
+Shared model binaries are not claimed as products of the repository's self-play
+run. Retain contributor ownership, publication permission and any supplied model
+license terms; the engine license does not establish the license of peer models.
 
 The auxiliary `archive/incomplete/gen_data.py` was present in the supplied project
 folder. Its authorship is not established by that folder alone. It requires an
