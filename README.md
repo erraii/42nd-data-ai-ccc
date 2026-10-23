@@ -31,9 +31,9 @@ overall values. Our team appears ahead of the other listed German entries.
 
 A moment from the competition at 42 Heilbronn.
 
-## Participation certificate
+## Winner certificate
 
-[View Eray Çakıray's participation certificate](docs/certificates/participation-certificate.pdf)
+🏆 [View certificate — Eray Çakıray](docs/certificates/winner-certificate.pdf)
 
 ## What we built
 
