@@ -266,6 +266,14 @@ reached 55,000 games and the `best_10.onnx` snapshot.
 these files are not presented as products of our self-play run. Keep contributor
 permission and any supplied model-license terms with shared binaries when publishing.
 
+## Reuse this workflow
+
+To start a similar AI competition project with Codex or another coding agent,
+see the [project starter](docs/project-starter/README.md).
+
+It includes a copy-paste prompt and templates for project instructions,
+environment setup, training, evaluation, and submission validation.
+
 ## Attribution and license
 
 Team: **42Heilbronn_GTA6**, 42 Heilbronn, including **Eray Çakıray and Tobias**.
