@@ -24,9 +24,8 @@ Use `--include-shared-models` to copy contributor-supplied models with attributi
 
 | Folder | Attribution |
 |---|---|
-| `team/tobias/` | Tobias, a teammate of Eray in 42Heilbronn_GTA6 |
-| `community/zak/` | Models shared by the peer identified as `zak` in the source folder |
-| `community/<other contributor>/` | Other explicitly imported peer contributions |
+| `team/tkern/` | Tobias, a teammate of Eray in 42Heilbronn_GTA6 |
+| `community/malshare/` | community/malshare/ | Models shared by Mhd Zakarea Alshareef, who competed under the team name malshare |
 
 Shared models retain contributor attribution and are not labeled as outputs of our
 self-play trainer. Keep the contributors' publication permission and supplied
