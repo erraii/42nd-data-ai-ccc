@@ -1,0 +1,454 @@
+[
+  {
+    "match_id": 11654,
+    "status": "metadata_only"
+  },
+  {
+    "match_id": 11721,
+    "status": "metadata_only"
+  },
+  {
+    "match_id": 11739,
+    "status": "metadata_only"
+  },
+  {
+    "match_id": 11803,
+    "status": "metadata_only"
+  },
+  {
+    "match_id": 11954,
+    "status": "metadata_only"
+  },
+  {
+    "match_id": 12084,
+    "status": "metadata_only"
+  },
+  {
+    "match_id": 12189,
+    "status": "verified",
+    "actions": 56,
+    "winner": "MAGENTA",
+    "our_side": "CYAN",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 12246,
+    "status": "verified",
+    "actions": 24,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 12467,
+    "status": "verified",
+    "actions": 30,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 12482,
+    "status": "verified",
+    "actions": 20,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 12680,
+    "status": "verified",
+    "actions": 56,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 12685,
+    "status": "verified",
+    "actions": 32,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 12915,
+    "status": "verified",
+    "actions": 40,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 13026,
+    "status": "verified",
+    "actions": 30,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 13165,
+    "status": "verified",
+    "actions": 34,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 13199,
+    "status": "verified",
+    "actions": 24,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 13597,
+    "status": "verified",
+    "actions": 25,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 13611,
+    "status": "verified",
+    "actions": 32,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 13929,
+    "status": "verified",
+    "actions": 17,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 14039,
+    "status": "verified",
+    "actions": 28,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 14250,
+    "status": "verified",
+    "actions": 33,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 14284,
+    "status": "verified",
+    "actions": 58,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 14375,
+    "status": "verified",
+    "actions": 26,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 14587,
+    "status": "verified",
+    "actions": 95,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 14740,
+    "status": "verified",
+    "actions": 66,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 14804,
+    "status": "verified",
+    "actions": 37,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 14901,
+    "status": "verified",
+    "actions": 97,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 15004,
+    "status": "verified",
+    "actions": 24,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 15071,
+    "status": "verified",
+    "actions": 14,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 15111,
+    "status": "verified",
+    "actions": 34,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 18544,
+    "status": "verified",
+    "actions": 21,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 18594,
+    "status": "verified",
+    "actions": 32,
+    "winner": "MAGENTA",
+    "our_side": "CYAN",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 18777,
+    "status": "verified",
+    "actions": 22,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 18794,
+    "status": "verified",
+    "actions": 46,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 19015,
+    "status": "verified",
+    "actions": 62,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 19079,
+    "status": "verified",
+    "actions": 44,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 19290,
+    "status": "verified",
+    "actions": 27,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 19435,
+    "status": "verified",
+    "actions": 28,
+    "winner": "MAGENTA",
+    "our_side": "CYAN",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 19520,
+    "status": "verified",
+    "actions": 26,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 19715,
+    "status": "verified",
+    "actions": 36,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 19774,
+    "status": "verified",
+    "actions": 38,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 19779,
+    "status": "verified",
+    "actions": 42,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 20047,
+    "status": "verified",
+    "actions": 22,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 20164,
+    "status": "verified",
+    "actions": 52,
+    "winner": "MAGENTA",
+    "our_side": "CYAN",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 20284,
+    "status": "verified",
+    "actions": 28,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 20438,
+    "status": "verified",
+    "actions": 40,
+    "winner": "MAGENTA",
+    "our_side": "CYAN",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 20998,
+    "status": "verified",
+    "actions": 44,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 21169,
+    "status": "verified",
+    "actions": 38,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 21337,
+    "status": "verified",
+    "actions": 38,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 21440,
+    "status": "metadata_only"
+  },
+  {
+    "match_id": 21649,
+    "status": "verified",
+    "actions": 26,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 21673,
+    "status": "verified",
+    "actions": 6,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 21915,
+    "status": "verified",
+    "actions": 44,
+    "winner": "MAGENTA",
+    "our_side": "CYAN",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 21932,
+    "status": "verified",
+    "actions": 36,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 22046,
+    "status": "verified",
+    "actions": 42,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  },
+  {
+    "match_id": 22141,
+    "status": "verified",
+    "actions": 34,
+    "winner": "CYAN",
+    "our_side": "MAGENTA",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 22736,
+    "status": "verified",
+    "actions": 64,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 22794,
+    "status": "verified",
+    "actions": 38,
+    "winner": "MAGENTA",
+    "our_side": "CYAN",
+    "our_result": "loss"
+  },
+  {
+    "match_id": 23379,
+    "status": "verified",
+    "actions": 66,
+    "winner": "MAGENTA",
+    "our_side": "MAGENTA",
+    "our_result": "win"
+  },
+  {
+    "match_id": 23401,
+    "status": "verified",
+    "actions": 25,
+    "winner": "CYAN",
+    "our_side": "CYAN",
+    "our_result": "win"
+  }
+]

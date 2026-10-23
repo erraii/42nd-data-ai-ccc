@@ -1,0 +1,175 @@
+{
+  "source_archive": "ccc.zip",
+  "files_at_initial_curation": [
+    {
+      "path": "LICENSE",
+      "sha256": "a90fe8ef750c39faac863808c1d14e1aaf8ba81d9a96b1cededb8cf48bf86ea6",
+      "bytes": 1546
+    },
+    {
+      "path": "archive/incomplete/gen_data.py",
+      "sha256": "367260a9d608751900a7936a0be3a949aba80f2a6a07368391e5ff93db3cd704",
+      "bytes": 7090
+    },
+    {
+      "path": "colony_one/__init__.py",
+      "sha256": "6e91a9c40b595b1b6116154365bb052590cd9d6df9ec6fdfc36cfcedcffb7e27",
+      "bytes": 1753
+    },
+    {
+      "path": "colony_one/action.py",
+      "sha256": "12ef52844501e36d6faf4975212db74c2977783a111b3d60063e28604a02930e",
+      "bytes": 1225
+    },
+    {
+      "path": "colony_one/baselines.py",
+      "sha256": "19c3126f1e5668df031917fef1a52fa7d0cc4b587fd026d99f6e4c2e794fabe8",
+      "bytes": 3691
+    },
+    {
+      "path": "colony_one/board.py",
+      "sha256": "a1b23455c22047db17f835c2fad2004754ecf9e5479b17afb1a9bce3281c8f5d",
+      "bytes": 18980
+    },
+    {
+      "path": "colony_one/constants.py",
+      "sha256": "ba4bcfe9d23ff16e6c9f4828da69945700e94dfd2069a0adc809719d7e73c0ad",
+      "bytes": 2835
+    },
+    {
+      "path": "colony_one/encoding.py",
+      "sha256": "42098cdbcc686269d1e897cfc7b6083390deb972098b7d5ab11cbc5b17310b58",
+      "bytes": 9785
+    },
+    {
+      "path": "colony_one/env.py",
+      "sha256": "0bef52825302c38d8c84e6ed02b0502ef1295ab50c1543d0bdda8936fc0044f5",
+      "bytes": 12792
+    },
+    {
+      "path": "colony_one/mcts.py",
+      "sha256": "1374b55952f08fcbe411307fd96ec62832d2712362b2b649a2307948ffbf355e",
+      "bytes": 30286
+    },
+    {
+      "path": "colony_one/onnx_runner.py",
+      "sha256": "1df1c257a42ae68b88f2b134b6618ab82dffb180a4576bbd40569d95fe376e08",
+      "bytes": 13553
+    },
+    {
+      "path": "colony_one/pieces.py",
+      "sha256": "71bcd84583ff2f22fd30d8d340da43385630f3f4872fb500ee36f6b57e6b3588",
+      "bytes": 3596
+    },
+    {
+      "path": "colony_one/renderer.py",
+      "sha256": "99321cab82df2594272cd32c8db1a8e246f7351a925ae136ee9367ee6a5c4fcc",
+      "bytes": 2403
+    },
+    {
+      "path": "colony_one/rules.py",
+      "sha256": "77ecc7877e8f82de4c1b7215ca141901778ee8e4e4fe333d5375fc1d59deaa66",
+      "bytes": 10631
+    },
+    {
+      "path": "colony_one/scene.json",
+      "sha256": "5489fce67399e60fa5d291d249cb4e524dd90705da5221cb9e2f1a690338270f",
+      "bytes": 12453
+    },
+    {
+      "path": "colony_one/submission_check.py",
+      "sha256": "1970edac6bc4bf270b9942291b1a2b9b4fc10d2486fc362ea42f039e6ed3bc2a",
+      "bytes": 8351
+    },
+    {
+      "path": "colony_one/submission_policy.py",
+      "sha256": "0acd6824e388389d2cdfb4276a6dbcbe59eb6f776e7acc1dca10539543514616",
+      "bytes": 29294
+    },
+    {
+      "path": "data/tournament/raw/export-01.json",
+      "sha256": "8b23828c98516152a5b2a0d04f942a06806f98fc29be9e061c8cdffc343d2277",
+      "bytes": 533075
+    },
+    {
+      "path": "data/tournament/raw/export-02.json",
+      "sha256": "918f83e4148eb9d208cc377ad61c3e190133889095a02a3c37fb47a371e3292e",
+      "bytes": 539043
+    },
+    {
+      "path": "docs/images/hall-of-fame.png",
+      "sha256": "219247452aa5ca719653579f07013dbf2e9c2da34d2fd2a13bbe5d0943bdf321",
+      "bytes": 1690943
+    },
+    {
+      "path": "docs/images/tournament-dashboard.png",
+      "sha256": "28b551b72087271d78c7bde641255a4370fcff8e806fcd04a3380aaef35e62b9",
+      "bytes": 577926
+    },
+    {
+      "path": "docs/observation.md",
+      "sha256": "a4f8f881807480ab136d14ae7b5c6417977fbac2a458b32a48dee22994651af0",
+      "bytes": 2311
+    },
+    {
+      "path": "docs/rules.md",
+      "sha256": "dd3b0c9274ff326fbbc52dcdbf9c36bcc212f1ee91751e87d641c1abf13212ec",
+      "bytes": 2958
+    },
+    {
+      "path": "docs/submission.md",
+      "sha256": "9226c31f4d2caf5175ff780bfe87cffd5ac41d37bf890ead3d2337e5ddd2491c",
+      "bytes": 11074
+    },
+    {
+      "path": "docs/upstream/README.md",
+      "sha256": "0e9dfbd39e4a55a145f4fafec1c7429f27e0b2e7eaeeb99ca53d52827b5f87ae",
+      "bytes": 3840
+    },
+    {
+      "path": "docs/upstream/requirements-original.txt",
+      "sha256": "4bc8f47be15ae1bbeb97d8e2117e352c649652ce6124afa621cb5750ced4ece5",
+      "bytes": 197
+    },
+    {
+      "path": "play/model_vs_model.py",
+      "sha256": "f477d1470fb1d0e8f7e7e3b83c4644081c5b75232e1f40d2d5c38ede35e8b438",
+      "bytes": 4989
+    },
+    {
+      "path": "play/random.onnx",
+      "sha256": "107229a18420ead8843a6250a1388cc8066895521a3b052e7b3c74034d76e77b",
+      "bytes": 17132
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "63dac490752858da207dca5a25d58497964c037b54de5daf971edb50b8ea33d7",
+      "bytes": 2269
+    },
+    {
+      "path": "scenes/level3.json",
+      "sha256": "567ad29da742d2c61dcfc44b158e46d4b1190f8afd61cb7662127a3ab2ac4e2f",
+      "bytes": 11138
+    },
+    {
+      "path": "scenes/level4.json",
+      "sha256": "5489fce67399e60fa5d291d249cb4e524dd90705da5221cb9e2f1a690338270f",
+      "bytes": 12453
+    },
+    {
+      "path": "scripts/train_bootstrap.py",
+      "sha256": "0bbe7041051744bddfefaf9ca0aed5a5367c63534cae7ffbcac4458aa7fe6974",
+      "bytes": 17997
+    },
+    {
+      "path": "scripts/train_selfplay.py",
+      "sha256": "0ed60e0e9303ebf847664dfca735a344ac963ae18c07c02a69d5ee738ec7beb8",
+      "bytes": 25415
+    },
+    {
+      "path": "tools/validate_submission.py",
+      "sha256": "8b971adbe378c932e5c8afd218d012e83f84eda3b62bd682c498b813b7b7c28a",
+      "bytes": 12660
+    }
+  ]
+}

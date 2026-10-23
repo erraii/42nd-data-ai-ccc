@@ -1,0 +1,61 @@
+match_id,played_at_utc,our_side,opponent,source_score,winner,our_result,has_protocol,recorded_actions,source_exports
+11654,2026-10-23T14:54:13+00:00,CYAN,,1,,unknown,False,0,export-01.json
+11721,2026-10-23T14:54:41+00:00,MAGENTA,,1,,unknown,False,0,export-01.json
+11739,2026-10-23T14:54:48+00:00,CYAN,,1,,unknown,False,0,export-01.json
+11803,2026-10-23T14:55:17+00:00,MAGENTA,,1,,unknown,False,0,export-01.json
+11954,2026-10-23T14:56:26+00:00,MAGENTA,,1,,unknown,False,0,export-01.json
+12084,2026-10-23T14:57:22+00:00,CYAN,,0,,unknown,False,0,export-01.json
+12189,2026-10-23T14:58:12+00:00,CYAN,,0,MAGENTA,loss,True,56,export-01.json
+12246,2026-10-23T14:58:40+00:00,MAGENTA,,0,MAGENTA,win,True,24,export-01.json
+12467,2026-10-23T15:00:22+00:00,CYAN,,1,CYAN,win,True,30,export-01.json
+12482,2026-10-23T15:00:28+00:00,MAGENTA,,0,MAGENTA,win,True,20,export-01.json
+12680,2026-10-23T15:02:05+00:00,CYAN,,1,CYAN,win,True,56,export-01.json
+12685,2026-10-23T15:02:07+00:00,MAGENTA,,0,MAGENTA,win,True,32,export-01.json
+12915,2026-10-23T15:03:51+00:00,MAGENTA,,0,MAGENTA,win,True,40,export-01.json
+13026,2026-10-23T15:04:40+00:00,CYAN,HR Cloud Fishers,1,CYAN,win,True,30,export-01.json
+13165,2026-10-23T15:05:46+00:00,CYAN,Popocatepetl,1,CYAN,win,True,34,export-01.json
+13199,2026-10-23T15:06:08+00:00,MAGENTA,Popocatepetl,0,MAGENTA,win,True,24,export-01.json
+13597,2026-10-23T15:09:16+00:00,CYAN,,1,CYAN,win,True,25,export-01.json
+13611,2026-10-23T15:09:22+00:00,MAGENTA,,0,MAGENTA,win,True,32,export-01.json
+13929,2026-10-23T15:11:52+00:00,CYAN,,1,CYAN,win,True,17,export-01.json
+14039,2026-10-23T15:12:40+00:00,MAGENTA,,0,MAGENTA,win,True,28,export-01.json
+14250,2026-10-23T15:14:19+00:00,MAGENTA,,1,CYAN,loss,True,33,export-01.json
+14284,2026-10-23T15:14:32+00:00,CYAN,,1,CYAN,win,True,58,export-01.json
+14375,2026-10-23T15:15:14+00:00,CYAN,,1,CYAN,win,True,26,export-01.json
+14587,2026-10-23T15:16:51+00:00,MAGENTA,,0,MAGENTA,win,True,95,export-01.json
+14740,2026-10-23T15:18:03+00:00,CYAN,,1,CYAN,win,True,66,export-01.json
+14804,2026-10-23T15:18:33+00:00,MAGENTA,,1,CYAN,loss,True,37,export-01.json
+14901,2026-10-23T15:19:13+00:00,CYAN,elsa,1,CYAN,win,True,97,export-01.json
+15004,2026-10-23T15:20:05+00:00,MAGENTA,,0,MAGENTA,win,True,24,export-01.json
+15071,2026-10-23T15:20:35+00:00,CYAN,,1,CYAN,win,True,14,export-01.json
+15111,2026-10-23T15:20:50+00:00,MAGENTA,,0,MAGENTA,win,True,34,export-01.json
+18544,2026-10-23T15:49:56+00:00,MAGENTA,Pregateste-ma,1,CYAN,loss,True,21,export-02.json
+18594,2026-10-23T15:50:25+00:00,CYAN,KriSSu09,0,MAGENTA,loss,True,32,export-02.json
+18777,2026-10-23T15:52:03+00:00,CYAN,,1,CYAN,win,True,22,export-02.json
+18794,2026-10-23T15:52:12+00:00,MAGENTA,Bravo Vector,1,CYAN,loss,True,46,export-02.json
+19015,2026-10-23T15:54:07+00:00,MAGENTA,Duhota,0,MAGENTA,win,True,62,export-02.json
+19079,2026-10-23T15:54:43+00:00,CYAN,,1,CYAN,win,True,44,export-02.json
+19290,2026-10-23T15:56:40+00:00,MAGENTA,,0,MAGENTA,win,True,27,export-02.json
+19435,2026-10-23T15:57:59+00:00,CYAN,,0,MAGENTA,loss,True,28,export-02.json
+19520,2026-10-23T15:58:53+00:00,CYAN,MP_DIN_LOOK,1,CYAN,win,True,26,export-02.json
+19715,2026-10-23T16:00:35+00:00,MAGENTA,placeholder-htbluva,1,CYAN,loss,True,36,export-02.json
+19774,2026-10-23T16:01:10+00:00,CYAN,,1,CYAN,win,True,38,export-02.json
+19779,2026-10-23T16:01:14+00:00,MAGENTA,Ragnarok,0,MAGENTA,win,True,42,export-02.json
+20047,2026-10-23T16:03:41+00:00,MAGENTA,CapyCode,1,CYAN,loss,True,22,export-02.json
+20164,2026-10-23T16:04:50+00:00,CYAN,SIR-EBI,0,MAGENTA,loss,True,52,export-02.json
+20284,2026-10-23T16:06:00+00:00,MAGENTA,Echipa Team,0,MAGENTA,win,True,28,export-02.json
+20438,2026-10-23T16:07:19+00:00,CYAN,Ragnarok,0,MAGENTA,loss,True,40,export-02.json
+20998,2026-10-23T16:12:45+00:00,MAGENTA,Echipa Team,0,MAGENTA,win,True,44,export-02.json
+21169,2026-10-23T16:14:29+00:00,CYAN,,1,CYAN,win,True,38,export-02.json
+21337,2026-10-23T16:16:09+00:00,MAGENTA,coolship,1,CYAN,loss,True,38,export-02.json
+21440,2026-10-23T16:17:12+00:00,CYAN,,1,,unknown,False,0,export-02.json
+21649,2026-10-23T16:19:19+00:00,MAGENTA,Julian S.,1,CYAN,loss,True,26,export-02.json
+21673,2026-10-23T16:19:36+00:00,CYAN,Popocatepetl,1,CYAN,win,True,6,export-02.json
+21915,2026-10-23T16:22:03+00:00,CYAN,Echipa Team,0,MAGENTA,loss,True,44,export-02.json
+21932,2026-10-23T16:22:14+00:00,MAGENTA,Echipa Team,0,MAGENTA,win,True,36,export-02.json
+22046,2026-10-23T16:23:25+00:00,CYAN,Echipa Team,1,CYAN,win,True,42,export-02.json
+22141,2026-10-23T16:24:27+00:00,MAGENTA,Bravo Vector,1,CYAN,loss,True,34,export-02.json
+22736,2026-10-23T16:30:54+00:00,MAGENTA,CapyCode,0,MAGENTA,win,True,64,export-02.json
+22794,2026-10-23T16:31:32+00:00,CYAN,Softmaxers,0,MAGENTA,loss,True,38,export-02.json
+23379,2026-10-23T16:37:56+00:00,MAGENTA,PretrainedLanguageModel,0,MAGENTA,win,True,66,export-02.json
+23401,2026-10-23T16:38:08+00:00,CYAN,,1,CYAN,win,True,25,export-02.json

@@ -1,0 +1,49 @@
+{
+  "files": [
+    {
+      "path": "models/baseline-level3.onnx",
+      "role": "Level 3 baseline",
+      "source": "smoke/model_fixed.onnx",
+      "bytes": 1356503,
+      "sha256": "e32e35292b87186eeb294066a2100cacd753eb05da97b931c6ef79a0564d2caf",
+      "validation": "not run by the collector"
+    },
+    {
+      "path": "models/baseline-level4.onnx",
+      "role": "First Level 4 baseline",
+      "source": "level4-v1/model.onnx",
+      "bytes": 1356503,
+      "sha256": "8318df8558a9e250afdab42557ace7a42b7f64ad4bfa7f78eeff27a0ae6f0ef1",
+      "validation": "not run by the collector"
+    },
+    {
+      "path": "models/latest-selfplay.onnx",
+      "role": "Latest local champion; not automatically the final submission",
+      "source": "selfplay/best.onnx",
+      "bytes": 1356664,
+      "sha256": "95073c549f7351dc7b91e558f2be46fcd4311bef9c040c22f47d3f5bf59cdb8f",
+      "validation": "not run by the collector"
+    },
+    {
+      "path": "models/submission.onnx",
+      "role": "Final tournament submission selected by the user",
+      "source": "selfplay/best_8.onnx",
+      "bytes": 1356664,
+      "sha256": "0b867f1d87865dd0d4bb06976ba2087c7b60ad1b53b86a94db401a574447b287",
+      "validation": "not run by the collector",
+      "same_hash_as": [
+        "selfplay/iteration-00089/candidate.onnx",
+        "selfplay/best_8.onnx"
+      ]
+    },
+    {
+      "path": "models/submission.pt",
+      "role": "Weights paired with a byte-identical candidate ONNX",
+      "source": "selfplay/iteration-00089/candidate.pt",
+      "bytes": 1359267,
+      "sha256": "d160ddf150ee5b1f4083d5431ccb6caee61d6d4eed28dc21d82cf7d88cb133b2",
+      "validation": "not run by the collector",
+      "paired_onnx_sha256": "0b867f1d87865dd0d4bb06976ba2087c7b60ad1b53b86a94db401a574447b287"
+    }
+  ]
+}

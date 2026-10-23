@@ -1,0 +1,39 @@
+{
+  "iteration": 110,
+  "completed_games": 55000,
+  "wins": 17,
+  "arena_games": 40,
+  "promoted": false,
+  "seconds": 61.13,
+  "scene_hash": "1bb2436627d4506213a2282aa350fe6a822e4ddc524aaa549b6d10972dc807a6",
+  "seed": 4242,
+  "champion_pt": "<training-root>/selfplay/iteration-00107/candidate.pt",
+  "champion_onnx": "<training-root>/selfplay/iteration-00107/candidate.onnx",
+  "rivals": [
+    "<training-root>/selfplay/iteration-00102/candidate.onnx",
+    "<training-root>/selfplay/iteration-00103/candidate.onnx",
+    "<training-root>/selfplay/iteration-00104/candidate.onnx",
+    "<training-root>/selfplay/iteration-00106/candidate.onnx"
+  ],
+  "replay": "<training-root>/selfplay/iteration-00110/replay.npz",
+  "settings": {
+    "games": 55000,
+    "batch_games": 500,
+    "bootstrap_games": 500,
+    "simulations": 100,
+    "epochs": 6,
+    "workers": 4,
+    "threads": 2,
+    "batch_size": 128,
+    "learning_rate": 0.0003,
+    "replay_positions": 50000,
+    "arena_games": 40,
+    "promote_rate": 0.55,
+    "seed": 4242,
+    "out": "<training-root>/selfplay",
+    "init": null,
+    "resume": true,
+    "recover_pending": false,
+    "data_only": false
+  }
+}

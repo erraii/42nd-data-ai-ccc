@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "games": 1000,
+    "simulations": 100,
+    "epochs": 12,
+    "workers": 4,
+    "threads": 2,
+    "batch_size": 128,
+    "eval_games": 20,
+    "seed": 42,
+    "out": "<training-root>/level4-v1",
+    "reuse_data": false,
+    "data_only": false,
+    "export_only": false,
+    "evaluate": null,
+    "level4": true,
+    "eval_opponent": null
+  },
+  "wins": 20,
+  "evaluation_games": 20
+}

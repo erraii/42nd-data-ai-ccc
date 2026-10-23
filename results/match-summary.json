@@ -1,0 +1,24 @@
+{
+  "unique_matches": 60,
+  "protocol_results": {
+    "win": 37,
+    "loss": 16,
+    "unknown": 7
+  },
+  "by_colour": {
+    "CYAN": {
+      "win": 19,
+      "loss": 7,
+      "unknown": 4
+    },
+    "MAGENTA": {
+      "win": 18,
+      "loss": 9,
+      "unknown": 3
+    }
+  },
+  "source_score_matches_cyan_outcome": 53,
+  "scope": "Two saved exports; not the complete tournament history or one model's evaluation set.",
+  "result_method": "Winner text in protocol compared with 'you'. Missing protocols remain unknown.",
+  "source_score_note": "For all records with a winner, score matches CYAN's outcome. Do not treat it as our score."
+}

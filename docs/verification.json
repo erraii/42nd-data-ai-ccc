@@ -1,0 +1,23 @@
+{
+  "repository_files": 57,
+  "total_uncompressed_bytes": 3705822,
+  "unit_tests": {
+    "passed": 10,
+    "failed": 0
+  },
+  "replays": {
+    "verified": 53,
+    "metadata_only": 7,
+    "failed": 0
+  },
+  "engine_source_unchanged": true,
+  "upstream_license_preserved": true,
+  "raw_exports_byte_identical": true,
+  "main_readme_local_links": "all resolved",
+  "gitignore_selection_checks": "passed",
+  "trained_models_included": false,
+  "training_logs_included": false,
+  "note": "Neural training and ONNX inference were not rerun as part of repository curation; external model/log bytes were not provided.",
+  "documentation_language": "English",
+  "english_documentation_and_links": "verified after translation"
+}

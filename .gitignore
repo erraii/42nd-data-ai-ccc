@@ -1,0 +1,36 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# Local training state, replay buffers and uncurated model files
+/runs/
+/local/
+/checkpoints/
+*.npz
+*.onnx
+!play/random.onnx
+!models/*.onnx
+*.pt
+!models/submission.pt
+*.pth
+*.log
+!results/training/validation/*.log
+
+# Credentials, editor files and desktop metadata
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.zip
+*.tar.gz

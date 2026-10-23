@@ -1,0 +1,18 @@
+{
+  "models_copied": [
+    "models/baseline-level3.onnx",
+    "models/baseline-level4.onnx",
+    "models/latest-selfplay.onnx",
+    "models/submission.onnx",
+    "models/submission.pt"
+  ],
+  "indexed_checkpoints_and_snapshots": 121,
+  "winning_model_explicitly_selected": true,
+  "excluded": [
+    "all .npz replay/dataset files",
+    "all unselected candidate.pt / candidate.onnx files",
+    "selfplay/other_models (third-party model files)",
+    "virtual environments"
+  ],
+  "state_note": "state-summary.json is redacted documentation, not a resumable checkpoint."
+}

@@ -1,0 +1,4 @@
+# Runtime dependencies are declared by the bundled environment's pyproject.toml.
+-e .
+# Install the CPU training framework separately:
+# uv pip install torch --index-url https://download.pytorch.org/whl/cpu
