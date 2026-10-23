@@ -19,7 +19,7 @@ contest copies were found inside the engine directory and have been relocated.
 
 The event screenshots and game exports were supplied by the repository owner.
 The Germany-filtered and all-countries screenshots document the national and
-overall result views. Tobias was a teammate; his supplied models are classified
+overall result views. Tobias Kern was a teammate; his supplied models are classified
 as team contributions under `models/team/tobias/`. Other peer-shared models are
 classified under `models/community/<contributor>/` when explicitly imported.
 Contributor identity and source filenames are retained in the model manifest.
