@@ -7,11 +7,11 @@ saved tournament replays, and the export fixes developed during the contest on
 **23 October 2026** at **42 Heilbronn**.
 
 | Result | Value | Evidence |
-|---|---|---|
-| Germany | **1st** | Germany-filtered Hall of Fame screenshot below |
-| Overall placement | **24th** | Hall of Fame screenshot below |
-| Final displayed score | **2112** | Hall of Fame screenshot below |
-| Team | **42Heilbronn_GTA6** | Hall of Fame |
+| --- | --- | --- |
+| Germany | **1st** | [Germany ranking](docs/images/germany-ranking.png) · [Winner certificate](docs/certificates/winner-certificate.pdf) |
+| Overall placement | **24th** | [Global ranking](docs/images/hall-of-fame.png) |
+| Final displayed score | **2112** | [Global ranking](docs/images/hall-of-fame.png) |
+| Team | **42Heilbronn_GTA6** | [Hall of Fame](docs/images/hall-of-fame.png) |
 
 ![Germany-filtered Hall of Fame with 42Heilbronn_GTA6 leading the listed German entries](docs/images/germany-ranking.png)
 
