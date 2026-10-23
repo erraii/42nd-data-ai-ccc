@@ -24,7 +24,7 @@ Use `--include-shared-models` to copy contributor-supplied models with attributi
 
 | Folder | Attribution |
 |---|---|
-| `team/tkern/` | Tobias, a teammate of Eray in 42Heilbronn_GTA6 |
+| `team/tkern/` | Tobias Kern, a teammate of Eray in 42Heilbronn_GTA6 |
 | `community/malshare/` | community/malshare/ | Models shared by Mhd Zakarea Alshareef, who competed under the team name malshare |
 
 Shared models retain contributor attribution and are not labeled as outputs of our

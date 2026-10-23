@@ -250,8 +250,8 @@ The snapshot numbers are saved version labels; they are not assumed to correspon
 to exact training-game counts. `best_8.onnx` was the final upload; training later
 reached 55,000 games and the `best_10.onnx` snapshot.
 
-**Tobias was a teammate.** His contributed models are kept in
-`models/team/tobias/`. Models shared by other peers are kept under
+**Tobias Kern was a teammate.** His contributed models are kept in
+`models/team/tkern/`. Models shared by other peers are kept under
 `models/community/<contributor>/`. Their manifests retain contributor attribution;
 these files are not presented as products of our self-play run. Keep contributor
 permission and any supplied model-license terms with shared binaries when publishing.
