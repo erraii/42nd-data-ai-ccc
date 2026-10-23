@@ -25,6 +25,16 @@ overall values. Our team appears ahead of the other listed German entries.
 
 </details>
 
+## At the event
+
+![Participants at the 42nd DATA/AI CCC in 42 Heilbronn](docs/images/ccc-event.jpg)
+
+A moment from the competition at 42 Heilbronn.
+
+## Participation certificate
+
+[View Eray Çakıray's participation certificate](docs/certificates/participation-certificate.pdf)
+
 ## What we built
 
 We started by playing the game manually, trained a small model from a heuristic
