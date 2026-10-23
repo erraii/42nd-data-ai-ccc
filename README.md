@@ -11,7 +11,7 @@ saved tournament replays, and the export fixes developed during the contest on
 | Germany | **1st** | Germany-filtered Hall of Fame screenshot below |
 | Overall placement | **24th** | Hall of Fame screenshot below |
 | Final displayed score | **2112** | Hall of Fame screenshot below |
-| Team | **42Heilbronn_GTA6** | Hall of Fame; earlier in-game screens showed `UNNAMED TEAM` |
+| Team | **42Heilbronn_GTA6** | Hall of Fame |
 
 ![Germany-filtered Hall of Fame with 42Heilbronn_GTA6 leading the listed German entries](docs/images/germany-ranking.png)
 
