@@ -160,8 +160,18 @@ def collect(source, repo, winner=None, include_weights=False,
         for path in sorted(shared_root.rglob("*.onnx")):
             relative = path.relative_to(shared_root)
             owner = relative.parts[0] if len(relative.parts) > 1 else "unattributed"
-            public_relative = relative if len(relative.parts) > 1 else Path(owner) / relative
-            category = "team" if owner.lower() == "tobias" else "community"
+            public_owner = {
+                "tobias": "tkern",
+                "tkern": "tkern",
+                "zak": "malshare",
+                "malshare": "malshare",
+            }.get(owner.lower(), owner)
+            public_relative = (
+                Path(public_owner).joinpath(*relative.parts[1:])
+                if len(relative.parts) > 1
+                else Path(public_owner) / relative
+            )
+            category = "team" if owner.lower() in {"tobias", "tkern"} else "community"
             role = "Teammate model contributed by Tobias" if category == "team" else f"Peer-shared model, source attribution: {owner}"
             entry = copy_artifact(path, f"models/{category}/{public_relative.as_posix()}", role,
                                   path.relative_to(source).as_posix(), manifest, repo)
