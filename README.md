@@ -276,7 +276,8 @@ environment setup, training, evaluation, and submission validation.
 
 ## Attribution and license
 
-Team: **42Heilbronn_GTA6**, 42 Heilbronn, including **Eray Çakıray and Tobias**.
+**Team:** 42Heilbronn_GTA6
+**Members:** Eray Çakıray and Tobias Kern, both from 42 Heilbronn.
 This was an AI-assisted contest workflow
 using ChatGPT/Codex for implementation and debugging.
 
