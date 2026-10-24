@@ -39,7 +39,7 @@ performance.
 | `train/gen_selfplay.py` | Self-play data generation for v2 |
 | `train/ensemble.py` | 50/50 ensemble export into a single ONNX file |
 | `train/arena.py` | Local head-to-head matches under the referee MCTS (source of the percentages above) |
-| `model_tobias.onnx` | v2: v1 fine-tuned on self-play and oracle data (6 × 64 residual network) |
+| `model_tobias.onnx` | v2 -> v1 fine-tuned on self-play and oracle data (6 × 64 residual network) |
 | `model_synthesis.onnx` | Ensemble of v2 and `best_6` |
 
 Training data (`*.npz`) and PyTorch weights (`*.pt`) are not included because of
