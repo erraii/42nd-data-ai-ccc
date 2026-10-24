@@ -277,9 +277,10 @@ environment setup, training, evaluation, and submission validation.
 ## Attribution and license
 
 **Team:** 42Heilbronn_GTA6
+
 **Members:** Eray Çakıray and Tobias Kern, both from 42 Heilbronn.
-This was an AI-assisted contest workflow
-using ChatGPT/Codex for implementation and debugging.
+
+This was an AI-assisted contest workflow using ChatGPT/Codex for implementation and debugging.
 
 The supplied environment is copyright **Paul Puntschart (2026)**. Its custom
 license is retained verbatim in [LICENSE](LICENSE), including its non-commercial
