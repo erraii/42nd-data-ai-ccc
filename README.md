@@ -8,7 +8,7 @@ saved tournament replays, and the export fixes developed during the contest on
 
 | Result | Value | Evidence |
 | --- | --- | --- |
-| Germany | **1st** | [Germany ranking](docs/images/germany-ranking.png) · [Winner certificate](docs/certificates/winner-certificate.pdf) |
+| Germany | **1st** | [Germany ranking](docs/images/germany-ranking.png) · [Eray's winner certificate](docs/certificates/winner-certificate.pdf) · [Tobias's winner certificate](docs/certificates/winner-certificate-42nd-data-ai-Tobias-Kern.pdf) |
 | Overall placement | **24th** | [Global ranking](docs/images/hall-of-fame.png) |
 | Final displayed score | **2112** | [Global ranking](docs/images/hall-of-fame.png) |
 | Team | **42Heilbronn_GTA6** | [Hall of Fame](docs/images/hall-of-fame.png) |
@@ -31,9 +31,15 @@ overall values. Our team appears ahead of the other listed German entries.
 
 A moment from the competition at 42 Heilbronn.
 
-## Winner certificate
+## Team certificates
 
-🏆 [View certificate — Eray Çakıray](docs/certificates/winner-certificate.pdf)
+🏆 **Winner certificates**
+- [Eray Çakıray — winner certificate](docs/certificates/winner-certificate.pdf)
+- [Tobias Kern — winner certificate](docs/certificates/winner-certificate-42nd-data-ai-Tobias-Kern.pdf)
+
+🎟️ **Participation certificates**
+- [Eray Çakıray — participation certificate](docs/certificates/participation-certificate.pdf)
+- [Tobias Kern — participation certificate](docs/certificates/participation-certificate-42nd-data-ai-Tobias-Kern.pdf)
 
 ## What we built
 
@@ -224,6 +230,7 @@ This is an in-contest snapshot, not the final result. Its table was set to
 | `data/tournament/raw/` | The two original tournament JSON exports |
 | `results/` | Reproducible match summaries and replay verification |
 | `models/` | Selected baselines, latest local champion, and the explicitly selected final submission |
+| [models/team/tkern/](models/team/tkern/) | Oracle, distillation, self-play and ensemble code and models (Tobias Kern) |
 | `docs/` | Rules, model contract, screenshots, provenance and curation notes |
 | `archive/incomplete/` | An incomplete auxiliary generator, excluded from the active pipeline |
 
@@ -260,11 +267,55 @@ The snapshot numbers are saved version labels; they are not assumed to correspon
 to exact training-game counts. `best_8.onnx` was the final upload; training later
 reached 55,000 games and the `best_10.onnx` snapshot.
 
-**Tobias Kern was a teammate.** His contributed models are kept in
-`models/team/tkern/`. Models shared by other peers are kept under
-`models/community/<contributor>/`. Their manifests retain contributor attribution;
-these files are not presented as products of our self-play run. Keep contributor
-permission and any supplied model-license terms with shared binaries when publishing.
+Both of us followed the same recipe (teacher → distillation → self-play) with
+different emphasis. Eray's self-play pipeline started early with a small network
+and a promotion gate, and **produced the final submission**. Tobias invested in an
+exact tactical teacher and a larger residual network, anchored self-play with
+oracle data, and ended in an ensemble candidate (see
+[below](#oracle-distillation-path-tobias-kern)).
+
+### Self-play pipeline (Eray Çakıray), final submission
+
+Eray's pipeline started with a heuristic MCTS teacher and a small policy/value
+network. It then trained iteratively from champion weights, using a rolling
+50,000-position replay buffer and self-play mixed with previous champions,
+heuristic and greedy opponents. Candidates were evaluated with 100 simulations
+per action and promoted only after reaching at least 55% wins in a balanced
+40-game arena. The final tournament upload was `best_8.onnx`.
+
+### Oracle distillation path (Tobias Kern)
+
+Built on Tobias's own machine with Claude Code on top of the provided game engine.
+It used the team's self-play models as opponents and ensemble members, so the two
+paths fed into each other. Code and models are in `models/team/tkern/`.
+
+- **Tactical oracle teacher:** rebuilds the board from the 16 input planes and
+  searches the side to move's remaining actions this turn for a Kernel capture,
+  firewall or endgame win, or the best material gain. A null-move check estimates
+  what the opponent could take next turn if we passed; the rest of the score is a
+  hand-written heuristic (piece values taken from the supplied GreedyAgent).
+  Locally it won 95% against the Greedy bot on Level 3 (40 games, Kernel-tactics
+  version) and 96% on Level 4 (24 games).
+- **Distillation (v1):** about 1.7M oracle-labelled positions (value targets) plus
+  search visit counts (policy targets), trained into a 6-block × 64-channel
+  residual network. Locally the oracle won only 17% of 24 games against v1.
+- **Self-play (v2):** v1, searching at 200 simulations, played itself and the
+  team's self-play models (at 100). v2 was fine-tuned from v1 on that data mixed
+  50/50 with oracle data, and beat v1 in 74% of 100 local games.
+- **Ensemble:** a 50/50 average of v2 and `best_6` in a single ONNX file,
+  evaluated as a submission candidate. Throughout the contest, models were
+  uploaded and played live against other teams' evolving models; the final
+  upload was `best_8` from the main self-play run.
+
+All percentages are local head-to-head results on small samples, not tournament
+performance.
+
+### Community models
+
+Models shared by other peers are kept under `models/community/<contributor>/`.
+Their manifests retain contributor attribution; these files are not presented as
+products of our self-play run. Keep contributor permission and any supplied
+model-license terms with shared binaries when publishing.
 
 ## Reuse this workflow
 
@@ -280,7 +331,7 @@ environment setup, training, evaluation, and submission validation.
 
 **Members:** Eray Çakıray and Tobias Kern, both from 42 Heilbronn.
 
-This was an AI-assisted contest workflow using ChatGPT/Codex for implementation and debugging.
+This was an AI-assisted contest workflow using ChatGPT/Codex and Claude Code for implementation and debugging.
 
 The supplied environment is copyright **Paul Puntschart (2026)**. Its custom
 license is retained verbatim in [LICENSE](LICENSE), including its non-commercial
