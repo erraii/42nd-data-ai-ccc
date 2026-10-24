@@ -16,7 +16,7 @@ Run `scripts/collect_training_artifacts.py` to populate:
 
 Numbered `best_*.onnx` snapshots and all iteration candidates are indexed by hash,
 not all copied by default. Use `--include-snapshots` to archive every available
-numbered snapshot in `models/evolution/` and write `results/training/model-evolution.csv`.
+numbered snapshot in `models/latest_models/` and write `results/training/model-evolution.csv`.
 This preserves the model versions without copying every iteration's weights and
 replay buffer. Snapshot numbers are version labels, not exact training-game counts.
 
@@ -25,9 +25,16 @@ Use `--include-shared-models` to copy contributor-supplied models with attributi
 | Folder | Attribution |
 |---|---|
 | `team/tkern/` | Tobias Kern, a teammate of Eray in 42Heilbronn_GTA6 |
-| `community/malshare/` | community/malshare/ | Models shared by Mhd Zakarea Alshareef, who competed under the team name malshare |
+| `community/malshare/` | Models shared by Mhd Zakarea Alshareef, who competed under the team name **malshare** |
 
 Shared models retain contributor attribution and are not labeled as outputs of our
 self-play trainer. Keep the contributors' publication permission and supplied
 licensing terms with the files. The collector does not certify model format:
 run the official validator before describing a model as a validated submission.
+
+## Final submission and strongest model
+
+| Model | Role |
+| --- | --- |
+| `latest_models/best_8.onnx` | Final competition submission |
+| `latest_models/best_10.onnx` | Our strongest model, reached after 55,000 self-play games; not submitted because we ran out of time |

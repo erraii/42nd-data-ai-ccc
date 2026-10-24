@@ -20,10 +20,10 @@ python3 scripts/collect_training_artifacts.py \
 | Destination | Contents |
 |---|---|
 | `models/submission.onnx` | Confirmed final tournament submission, `best_8.onnx` |
-| `models/evolution/best_*.onnx` | Every available numbered self-play snapshot |
+| `models/latest_models/best_*.onnx` | Every available numbered self-play snapshot |
 | `results/training/model-evolution.csv` | Snapshot hashes and matching saved candidates |
-| `models/team/tobias/` | Tobias's teammate contributions |
-| `models/community/zak/` | Peer-shared models from the source folder named `zak` |
+| `models/team/tkern/` | Tobias's teammate contributions |
+| `models/community/malshare/` | Peer-shared models from the source folder named `zak` |
 | `models/manifest.json` | File sizes, hashes, contributor roles and source paths |
 
 Version names alone do not prove a monotonic improvement in playing strength.

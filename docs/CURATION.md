@@ -56,8 +56,14 @@ owner's originals or training backups.
 
 ## Reproducibility limits
 
-The prepared archive is sufficient to inspect the code, replay the exported games,
-and start new training after installing dependencies. The team confirmed `best_8.onnx` as the final tournament submission. Training
-continued to 55,000 games and the `best_10.onnx` snapshot. Actual model, weight and
-log bytes are still imported from the owner's external training directory using
-the collector; the latest local champion remains distinct from the final upload.
+The repository includes the code needed to replay the exported games and
+start new training after installing dependencies.
+
+Our strongest model was `best_10.onnx`, reached after 55,000 self-play games.
+However, we ran out of time to submit it before the competition ended.
+Our final tournament submission therefore remained `best_8.onnx`.
+
+Selected models and training records are included in the repository.
+The complete training archive, including replay buffers and intermediate
+checkpoints, is retained separately and is required to resume the original
+training run.

@@ -44,12 +44,13 @@ python3 scripts/collect_training_artifacts.py \
   --include-shared-models
 ```
 
-`best_8.onnx` is the final submission selected by the team. Training subsequently
-continued to 55,000 games and the `best_10.onnx` snapshot.
-The collector copies it to `models/submission.onnx`, compares its hash with the
-saved candidates, and adds `models/submission.pt` only if a matching candidate
-ONNX has an accompanying `candidate.pt`. It does not pair an old submitted model
-with unrelated latest `best.pt` weights.
+Our strongest model was `best_10.onnx`, reached after 55,000 self-play games.
+However, we ran out of time to submit it before the competition ended.
+Our final tournament submission therefore remained `best_8.onnx`.
+
+The collector copies `best_8.onnx` to `models/submission.onnx`, compares its
+hash with the saved candidates, and adds `models/submission.pt` only if a
+matching candidate ONNX has an accompanying `candidate.pt`.
 
 Validate the selected model separately:
 
@@ -63,8 +64,8 @@ python tools/validate_submission.py models/submission.onnx
 |---|---|
 | Every `iteration-*/candidate.pt` and `candidate.onnx` | Keep the full experiment archive outside Git. Publish the selected models and their hash index. |
 | `selfplay/iteration-00110/replay.npz` and other `.npz` files | Keep in the original run directory if you want to resume training. Omit from Git. |
-| Numbered `selfplay/best_*.onnx` snapshots | Publish available snapshots under `models/evolution/` with `--include-snapshots`; retain the source copies. |
-| `selfplay/other_models/tobias/*` and other peer contributions | With `--include-shared-models`, Tobias is credited as a teammate under `models/team/tobias/`; peer files go under `models/community/<contributor>/`. Preserve contributor permission and license terms. |
+| Numbered `selfplay/best_*.onnx` snapshots | Publish available snapshots under `models/latest_models/` with `--include-snapshots`; retain the source copies. |
+| `selfplay/other_models/tobias/*` and other peer contributions | With `--include-shared-models`, Tobias is credited as a teammate under `models/team/tkern/`; peer files go under `models/community/<contributor>/`. Preserve contributor permission and license terms. |
 | `.venv`, installed Python packages, `__pycache__`, bytecode | Recreated during setup; omit from Git. |
 | `smoke/dataset.npz`, `level4-v1/dataset.npz` | Not required in the main source repository, even though these particular datasets are small. |
 | Original ZIP archives and superseded script copies | Preserve in the original backup; omit duplicates from the clean repository. |

@@ -136,17 +136,17 @@ class ArtifactCollector(unittest.TestCase):
         self.assertEqual([r["snapshot"] for r in rows], ["best_2.onnx", "best_7.onnx", "best_10.onnx"])
         self.assertEqual(rows[1]["same_hash_as_submission"], "True")
         self.assertEqual(rows[1]["matching_candidates"], "selfplay/iteration-00005/candidate.onnx")
-        self.assertTrue((self.repo / "models/evolution/best_10.onnx").exists())
+        self.assertTrue((self.repo / "models/latest_models/best_10.onnx").exists())
 
     def test_shared_models_credit_teammate_and_peers_separately(self):
         self.write("selfplay/other_models/tobias/model_tobias.onnx", b"teammate model")
         self.write("selfplay/other_models/zak/apex_predator.onnx", b"peer model")
         self.do_collect(include_shared_models=True)
-        self.assertTrue((self.repo / "models/team/tobias/model_tobias.onnx").exists())
-        self.assertTrue((self.repo / "models/community/zak/apex_predator.onnx").exists())
+        self.assertTrue((self.repo / "models/team/tkern/model_tobias.onnx").exists())
+        self.assertTrue((self.repo / "models/community/malshare/apex_predator.onnx").exists())
         self.assertTrue((self.repo / "models/community/unattributed/rival.onnx").exists())
         entries = json.loads((self.repo / "models/manifest.json").read_text())["files"]
-        teammate = next(r for r in entries if r["path"] == "models/team/tobias/model_tobias.onnx")
+        teammate = next(r for r in entries if r["path"] == "models/team/tkern/model_tobias.onnx")
         self.assertEqual(teammate["contributor"], "tobias")
         self.assertIn("Teammate", teammate["role"])
 

@@ -143,7 +143,7 @@ def collect(source, repo, winner=None, include_weights=False,
         evolution = []
         for path in numbered:
             origin = path.relative_to(source).as_posix()
-            entry = copy_artifact(path, f"models/evolution/{path.name}", "Numbered self-play snapshot",
+            entry = copy_artifact(path, f"models/latest_models/{path.name}", "Numbered self-play snapshot",
                                   origin, manifest, repo)
             matching = [r["source"] for r in index if r["sha256"] == entry["sha256"]
                         and "/iteration-" in r["source"]]

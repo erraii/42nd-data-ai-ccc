@@ -253,7 +253,7 @@ the saved candidate ONNX has a matching SHA-256 hash.
 
 ### Model evolution and team contributions
 
-Numbered snapshots are archived in `models/evolution/`, preserving their original
+Numbered snapshots are archived in `models/latest_models/`, preserving their original
 `best_N.onnx` filenames. `results/training/model-evolution.csv` records their hashes,
 matching iteration candidates, and whether they match the submitted model.
 The snapshot numbers are saved version labels; they are not assumed to correspond
